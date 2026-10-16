@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación de Graduación</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Importar fuente Parisienne (letra de carta muy elegante) y Lora -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Parisienne&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="app-container">
+        <!-- Portada / Sobre -->
+        <section class="slide" id="cover">
+            <!-- EL SOBRE BLANCO -->
+            <div class="envelope">
+                <div class="stamp">
+                    <img src="img/birrete.png" class="cap-icon" alt="Birrete">
+                </div>
+
+                <h1 class="typing-text">Estás invitado</h1>
+                <p class="envelope-date">15 de Noviembre, 2026</p>
+
+                <!-- Las flores se quedan dentro del sobre -->
+                <img src="img/flores-borde.png" class="floral-bottom" alt="Flores">
+            </div>
+
+            <!-- EL BOTÓN (Ahora está afuera del sobre) -->
+            <button id="open-btn">T O C A R &nbsp; P A R A &nbsp; A B R I R</button>
+        </section>
+
+        <!-- Detalles del evento -->
+        <section class="slide" id="details">
+            <div class="content floral-bg">
+                <p class="subtitle">Acompáñanos a celebrar a</p>
+                <h2 class="name">Tu Nombre Aquí</h2>
+                <p class="date">Sábado, 15 de Noviembre, 2026</p>
+                <p class="location">Salón de Eventos Principal<br>Matagalpa, Nicaragua</p>
+            </div>
+        </section>
+
+        <!-- Confirmación de asistencia -->
+        <section class="slide" id="rsvp">
+            <div class="content floral-bg">
+                <h2>Confirma tu asistencia</h2>
+                <form id="rsvp-form">
+                    <input type="text" placeholder="Tu nombre y apellido" required>
+                    <select required>
+                        <option value="" disabled selected>¿Asistirás?</option>
+                        <option value="si">¡Sí, ahí estaré!</option>
+                        <option value="no">No podré asistir</option>
+                    </select>
+                    <button type="submit">Enviar confirmación</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

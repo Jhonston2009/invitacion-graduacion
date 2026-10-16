@@ -1,0 +1,222 @@
+/* Reseteo básico y tipografías */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Lora', serif;
+    background-color: #fdf5f6; /* Rosa pastel muy suave */
+    color: #4a4a4a;
+    overflow: hidden; /* Ocultamos el scroll general por ahora */
+}
+
+/* Contenedor que hará el efecto de deslizar (swipe) */
+#app-container {
+    height: 100%;
+    overflow-y: hidden; /* Se habilita con JavaScript al abrir */
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+/* Cada pantalla de la invitación */
+.slide {
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding: 20px;
+}
+
+/* Estilos de los textos */
+h1, h2.name {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4rem;
+    color: #8b5a65;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+.date, .location {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Botones y formularios */
+button {
+    margin-top: 30px;
+    padding: 12px 25px;
+    border: none;
+    background-color: #d8a7b1;
+    color: white;
+    font-size: 1.1rem;
+    font-family: 'Lora', serif;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 300px;
+    margin-top: 20px;
+}
+
+input, select {
+    padding: 10px;
+    border: 1px solid #d8a7b1;
+    border-radius: 8px;
+    font-family: 'Lora', serif;
+}
+/* --- ESTILOS DEL SOBRE POSTAL --- */
+.envelope {
+    background-color: #ffffff; /* Tarjeta blanca */
+    width: 90%;
+    max-width: 400px;
+    padding: 60px 20px 50px 20px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08); /* Sombra suave para que parezca papel */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+
+/* Sello postal ajustado más arriba y a la derecha */
+.stamp {
+    position: absolute;
+    top: 10px; /* Antes era 20px, ahora está más pegado al borde superior */
+    right: 10px; /* Más pegado al borde derecho */
+    width: 40px; /* Un poquito más pequeño */
+    height: 50px;
+    border: 2px dashed #d8a7b1;
+    border-radius: 4px;
+    background-color: #fdf5f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- ANIMACIONES DE ENTRADA --- */
+
+/* 1. Efecto de máquina de escribir / mano alzada */
+.typing-text {
+    font-family: 'Parisienne', cursive; /* Nueva letra estilo carta */
+    font-size: 3.5rem; /* Tamaño intermedio perfecto */
+    font-weight: normal;
+    color: #2b2b2b;
+    margin-top: 5px; /* Lo mantiene cerca del borde superior */
+    margin-bottom: 5px;
+    /* ESTAS DOS LÍNEAS LO PONEN POR ENCIMA DE LAS FLORES */
+    position: relative;
+    z-index: 10;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 0;
+    animation: typeWriter 2.5s ease-in-out forwards 0.5s;
+}
+@keyframes typeWriter {
+    to {
+        max-width: 100%;
+    }
+    /* Revela el texto de izquierda a derecha */
+}
+
+/* 2. La fecha aparece suavemente después del texto */
+.envelope-date {
+    font-family: 'Lora', serif;
+    font-size: 1.2rem;
+    color: #2b2b2b; /* Cambiado al mismo tono oscuro elegante */
+    margin-bottom: 40px;
+    opacity: 0;
+    position: relative;
+    z-index: 5; /* Asegura que no la tapen las flores */
+    animation: fadeIn 1.5s ease forwards 2.5s;
+}
+
+/* 3. Botón de texto plano fuera del sobre */
+#open-btn {
+    position: absolute;
+    bottom: 10%; /* Lo posiciona en la parte baja de la pantalla, fuera de la tarjeta */
+    background: transparent;
+    color: #8b5a65;
+    border: none; /* Quitamos el borde para que sea solo texto */
+    box-shadow: none; /* Sin sombra */
+    font-family: 'Lora', serif;
+    font-size: 0.9rem;
+    letter-spacing: 4px; /* Separa las letras para darle ese toque elegante */
+    text-transform: uppercase;
+    opacity: 0;
+    animation: fadeIn 1.5s ease forwards 3.5s;
+    cursor: pointer;
+    z-index: 10;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+/* Ajusta el padding inferior del sobre para que el botón no quede sobre las flores */
+.envelope {
+    background-color: #ffffff;
+    width: 90%;
+    max-width: 400px;
+    padding: 60px 20px 100px 20px; /* Aumentamos el padding inferior a 100px */
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Sello postal ajustado para centrar el birrete */
+.stamp {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 45px;
+    height: 55px;
+    border: 2px dashed #d8a7b1;
+    border-radius: 4px;
+    background-color: #fdf5f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ícono del birrete */
+.cap-icon {
+    width: 25px; /* Ajusta el tamaño según tu imagen */
+    height: auto;
+    opacity: 0.8;
+}
+
+/* Flores ancladas a la parte inferior del sobre */
+.floral-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    pointer-events: none; /* Evita que la imagen bloquee los clics en el botón */
+}
