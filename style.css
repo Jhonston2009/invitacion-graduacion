@@ -155,16 +155,20 @@ input, select {
     flex-direction: column;
 }
 #open-btn {
-    position: relative; /* Ahora fluye naturalmente debajo del sobre */
-    margin-top: 35px; /* Separación fija respecto a las flores */
+    position: relative; 
+    margin-top: 35px; 
     background: transparent;
     color: #8b5a65;
     border: none;
     box-shadow: none;
     font-family: 'Lora', serif;
-    font-size: 0.9rem;
-    letter-spacing: 4px;
+    font-size: 0.85rem; /* Un poquito más pequeño */
+    letter-spacing: 3px; /* Espaciado ligeramente menor */
     text-transform: uppercase;
+    
+    /* LA MAGIA PARA QUE NO SE ROMPA EN DOS LÍNEAS */
+    white-space: nowrap; 
+
     opacity: 0;
     animation: fadeIn 1.5s ease forwards 3.5s;
     cursor: pointer;
