@@ -1,4 +1,4 @@
-/* Reseteo b·sico y tipografÌas */
+/* Reseteo b√°sico y tipograf√≠as */
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +13,7 @@ body, html {
     overflow: hidden; /* Ocultamos el scroll general por ahora */
 }
 
-/* Contenedor que har· el efecto de deslizar (swipe) */
+/* Contenedor que har√° el efecto de deslizar (swipe) */
 #app-container {
     height: 100%;
     overflow-y: hidden; /* Se habilita con JavaScript al abrir */
@@ -21,7 +21,7 @@ body, html {
     scroll-behavior: smooth;
 }
 
-/* Cada pantalla de la invitaciÛn */
+/* Cada pantalla de la invitaci√≥n */
 .slide {
     height: 100vh;
     width: 100vw;
@@ -98,12 +98,12 @@ input, select {
 
 }
 
-/* Sello postal ajustado m·s arriba y a la derecha */
+/* Sello postal ajustado m√°s arriba y a la derecha */
 .stamp {
     position: absolute;
-    top: 10px; /* Antes era 20px, ahora est· m·s pegado al borde superior */
-    right: 10px; /* M·s pegado al borde derecho */
-    width: 40px; /* Un poquito m·s pequeÒo */
+    top: 10px; /* Antes era 20px, ahora est√° m√°s pegado al borde superior */
+    right: 10px; /* M√°s pegado al borde derecho */
+    width: 40px; /* Un poquito m√°s peque√±o */
     height: 50px;
     border: 2px dashed #d8a7b1;
     border-radius: 4px;
@@ -115,15 +115,15 @@ input, select {
 
 /* --- ANIMACIONES DE ENTRADA --- */
 
-/* 1. Efecto de m·quina de escribir / mano alzada */
+/* 1. Efecto de m√°quina de escribir / mano alzada */
 .typing-text {
     font-family: 'Parisienne', cursive; /* Nueva letra estilo carta */
-    font-size: 3.5rem; /* TamaÒo intermedio perfecto */
+    font-size: 3.5rem; /* Tama√±o intermedio perfecto */
     font-weight: normal;
     color: #2b2b2b;
     margin-top: 5px; /* Lo mantiene cerca del borde superior */
     margin-bottom: 5px;
-    /* ESTAS DOS LÕNEAS LO PONEN POR ENCIMA DE LAS FLORES */
+    /* ESTAS DOS L√çNEAS LO PONEN POR ENCIMA DE LAS FLORES */
     position: relative;
     z-index: 10;
     white-space: nowrap;
@@ -138,7 +138,7 @@ input, select {
     /* Revela el texto de izquierda a derecha */
 }
 
-/* 2. La fecha aparece suavemente despuÈs del texto */
+/* 2. La fecha aparece suavemente despu√©s del texto */
 .envelope-date {
     font-family: 'Lora', serif;
     font-size: 1.2rem;
@@ -150,17 +150,20 @@ input, select {
     animation: fadeIn 1.5s ease forwards 2.5s;
 }
 
-/* 3. BotÛn de texto plano fuera del sobre */
+/* 3. Bot√≥n de texto plano fuera del sobre */
+#cover {
+    flex-direction: column;
+}
 #open-btn {
-    position: absolute;
-    bottom: 10%; /* Lo posiciona en la parte baja de la pantalla, fuera de la tarjeta */
+    position: relative; /* Ahora fluye naturalmente debajo del sobre */
+    margin-top: 35px; /* Separaci√≥n fija respecto a las flores */
     background: transparent;
     color: #8b5a65;
-    border: none; /* Quitamos el borde para que sea solo texto */
-    box-shadow: none; /* Sin sombra */
+    border: none;
+    box-shadow: none;
     font-family: 'Lora', serif;
     font-size: 0.9rem;
-    letter-spacing: 4px; /* Separa las letras para darle ese toque elegante */
+    letter-spacing: 4px;
     text-transform: uppercase;
     opacity: 0;
     animation: fadeIn 1.5s ease forwards 3.5s;
@@ -173,7 +176,7 @@ input, select {
         opacity: 1;
     }
 }
-/* Ajusta el padding inferior del sobre para que el botÛn no quede sobre las flores */
+/* Ajusta el padding inferior del sobre para que el bot√≥n no quede sobre las flores */
 .envelope {
     background-color: #ffffff;
     width: 90%;
@@ -202,9 +205,9 @@ input, select {
     align-items: center;
 }
 
-/* Õcono del birrete */
+/* √çcono del birrete */
 .cap-icon {
-    width: 25px; /* Ajusta el tamaÒo seg˙n tu imagen */
+    width: 25px; /* Ajusta el tama√±o seg√∫n tu imagen */
     height: auto;
     opacity: 0.8;
 }
@@ -218,5 +221,5 @@ input, select {
     height: auto;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
-    pointer-events: none; /* Evita que la imagen bloquee los clics en el botÛn */
+    pointer-events: none; /* Evita que la imagen bloquee los clics en el bot√≥n */
 }
