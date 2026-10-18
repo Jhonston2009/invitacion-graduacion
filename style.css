@@ -120,7 +120,7 @@ input, select {
     font-family: 'Parisienne', cursive; /* Nueva letra estilo carta */
     font-size: 3.5rem; /* Tamaño intermedio perfecto */
     font-weight: normal;
-    color: #2b2b2b;
+    color: ghostwhite;
     margin-top: 5px; /* Lo mantiene cerca del borde superior */
     margin-bottom: 5px;
     /* ESTAS DOS LÍNEAS LO PONEN POR ENCIMA DE LAS FLORES */
@@ -142,7 +142,7 @@ input, select {
 .envelope-date {
     font-family: 'Lora', serif;
     font-size: 1.2rem;
-    color: #2b2b2b; /* Cambiado al mismo tono oscuro elegante */
+    color: ghostwhite; /* Cambiado al mismo tono oscuro elegante */
     margin-bottom: 40px;
     opacity: 0;
     position: relative;
@@ -151,28 +151,106 @@ input, select {
 }
 
 /* 3. Botón de texto plano fuera del sobre */
+
+/* 1. Fondo de Gala Completo */
 #cover {
+    background-image: radial-gradient(circle, #1a1a1a 0%, #0a0a0a 100%); /* Efecto de luz nocturna de gala */
+    background-size: cover;
+    display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* El Contenedor de la Tarjeta */
+.cover-gala {
+    width: 85%;
+    max-width: 360px;
+    background-color: #0d0d0d;
+    border: 3px double #d4af37; /* Doble borde dorado elegante */
+    border-radius: 12px;
+    padding: 40px 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /* Destellos de gala como patrón de fondo */
+    background-image: radial-gradient(rgba(212, 175, 55, 0.05) 1px, transparent 0);
+    background-size: 24px 24px;
+}
+
+/* Insignia dorada del birrete */
+.gala-badge {
+    margin-bottom: 25px;
+    width: 60px;
+    height: 60px;
+    border: 1px solid #d4af37;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #111111;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+.cap-gala-icon {
+    width: 35px;
+    height: auto;
+}
+/* Título de la gala */
+.gala-typing {
+    font-family: 'Parisienne', cursive;
+    font-size: 3.2rem;
+    color: #d4af37; /* Dorado brillante en letra de carta */
+    margin: 0;
+    text-shadow: 0px 2px 5px rgba(0,0,0,0.5);
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 0;
+    animation: typeWriter 2.5s ease-in-out forwards 0.5s;
+    font-weight: normal;
+}
+/* Subtítulo */
+.gala-sub {
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    letter-spacing: 5px; /* Espaciado lujoso */
+    color: #f3e5ab; /* Color crema dorado */
+    margin-top: 5px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* Fecha de la gala */
+.gala-date {
+    font-family: 'Lora', serif;
+    font-size: 1.1rem;
+    color: #ffffff; /* Contraste blanco de noche */
+    border-top: 1px solid rgba(212, 175, 55, 0.3); /* Línea dorada divisora muy fina */
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    padding: 10px 0;
+    width: 90%;
+    margin: 0;
+    letter-spacing: 1px;
 }
 #open-btn {
-    position: relative; 
-    margin-top: 35px; 
+    position: relative;
+    margin-top: 40px;
     background: transparent;
-    color: #8b5a65;
+    color: #d4af37; /* Cambio a Dorado brillante */
     border: none;
     box-shadow: none;
     font-family: 'Lora', serif;
-    font-size: 0.85rem; /* Un poquito más pequeño */
-    letter-spacing: 3px; /* Espaciado ligeramente menor */
+    font-size: 0.85rem;
+    letter-spacing: 4px;
     text-transform: uppercase;
-    
-    /* LA MAGIA PARA QUE NO SE ROMPA EN DOS LÍNEAS */
-    white-space: nowrap; 
-
+    white-space: nowrap;
     opacity: 0;
-    animation: fadeIn 1.5s ease forwards 3.5s;
+    animation: fadeIn 1.5s ease forwards 3s;
     cursor: pointer;
     z-index: 10;
+    text-shadow: 0 0 8px rgba(212, 175, 55, 0.4); /* Leve resplandor dorado */
 }
 
 @keyframes fadeIn {
@@ -227,3 +305,113 @@ input, select {
     border-bottom-right-radius: 8px;
     pointer-events: none; /* Evita que la imagen bloquee los clics en el botón */
 }
+.inviter {
+    font-family: 'Parisienne', cursive;
+    /* Opcional: puedes aumentar el tamaño si la cursiva se ve muy pequeña */
+    font-size: 24px;
+}
+/* Estilos para la segunda pantalla */
+#details .subtitle {
+    font-family: 'Lora', serif;
+    font-size: 1.1rem;
+    color: #666;
+    margin-top: 20px;
+}
+
+/* Letra elegante para Graduación */
+#details .title-grad {
+    font-family: 'Parisienne', cursive;
+    font-size: 4rem;
+    color: #8b5a65; /* El color rosa oscuro original */
+    margin: -10px 0 20px 0;
+    font-weight: normal;
+}
+
+/* Caja de fecha y hora para darle respiro */
+/* Recuadro de fecha con borde dorado y fondo un poco más blanco */
+#details .event-info {
+    background-color: rgba(255, 255, 255, 0.75);
+    padding: 15px 30px;
+    border-radius: 10px;
+    margin-bottom: 10px; /* CAMBIO: Menos espacio debajo de la caja para subir los textos */
+    border: 1px solid #d4af37;
+}
+
+#details .date, #details .time {
+    font-family: 'Lora', serif;
+    font-size: 1.2rem;
+    color: #2b2b2b;
+    margin: 5px 0;
+}
+
+#details .invites {
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    color: #666;
+    margin-top: 5px; /* CAMBIO: Lo sube más hacia el recuadro blanco */
+    margin-bottom: 0px; /* CAMBIO: Lo acerca más al nombre de Alexa */
+}
+
+#details .host-name {
+    font-family: 'Parisienne', cursive;
+    font-size: 1.5rem;
+    color: #2b2b2b; /* CAMBIO: Gris muy oscuro casi negro para mayor contraste */
+    font-weight: 600;
+    white-space: nowrap;
+    margin-top: 0px; /* CAMBIO: Lo pega más a la palabra "Invita:" */
+    /* MAGIA: Agrega un resplandor blanco para que el texto nunca se pierda contra los globos o lazos */
+    text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.9), -1px -1px 4px rgba(255, 255, 255, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* El estilo para el detalle del birrete miniatura */
+.tiny-cap {
+    width: 25px; /* Tamaño muy sutil y elegante */
+    height: auto;
+    margin-left: 8px; /* Separación entre el nombre y el dibujo */
+}
+/* --- SEGUNDA PANTALLA: GALERÍA DE FOTO --- */
+
+.photo-gallery {
+    margin: 10px auto 20px auto; /* Centra el contenedor con margen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Forzar que el marco sea un círculo de tamaño fijo y no se desborde */
+.photo-frame.circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #d4af37; /* CAMBIO: Borde color oro */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    display: block;
+    position: relative;
+}
+
+/* Ajuste de la foto para que no se estire */
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recorta la imagen automáticamente para llenar el círculo */
+    display: block;
+}
+/* --- SEGUNDA PANTALLA: FONDO FESTIVO --- */
+#details {
+    background-image: url('img/Marcofestivo.png');
+    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+    background-position: center; /* Centra los globos y listones */
+    background-repeat: no-repeat;
+    background-color: #ffffff; /* Color de respaldo */
+}
+    #details .date, #details .time, #details .location {
+        font-family: 'Lora', serif;
+        font-size: 1.1rem; /* Lo bajé un poquitito (de 1.2 a 1.1) para que quepan las tres líneas sin hacer el cuadro muy grande */
+        color: #2b2b2b;
+        margin: 5px 0;
+    }
