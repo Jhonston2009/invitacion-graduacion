@@ -200,15 +200,15 @@ input, select {
 /* Título de la gala */
 .gala-typing {
     font-family: 'Parisienne', cursive;
-    font-size: 3.2rem;
-    color: #d4af37; /* Dorado brillante en letra de carta */
+    font-size: 2.5rem; /* CAMBIO: Más pequeña (de 3.2 a 2.5) para que quepa en cualquier celular */
+    color: #d4af37; 
     margin: 0;
     text-shadow: 0px 2px 5px rgba(0,0,0,0.5);
-    white-space: nowrap;
-    overflow: hidden;
-    max-width: 0;
-    animation: typeWriter 2.5s ease-in-out forwards 0.5s;
+    text-align: center;
+    width: 100%; /* CAMBIO: Que use el ancho disponible */
+    max-width: 290px; /* Evita que se estire demasiado */
     font-weight: normal;
+    word-wrap: break-word; /* Permite acomodarse si la pantalla es muy angosta */
 }
 /* Subtítulo */
 .gala-sub {
@@ -402,12 +402,13 @@ input, select {
     display: block;
 }
 /* --- SEGUNDA PANTALLA: FONDO FESTIVO --- */
+/* --- SEGUNDA PANTALLA: FONDO FESTIVO --- */
 #details {
     background-image: url('img/Marcofestivo.png');
-    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
-    background-position: center; /* Centra los globos y listones */
+    background-size: 100% 100%; /* CAMBIO CLAVE: Obliga al fondo a ajustarse completo a la pantalla sin recortar los bordes */
+    background-position: center;
     background-repeat: no-repeat;
-    background-color: #ffffff; /* Color de respaldo */
+    background-color: #ffffff;
 }
     #details .date, #details .time, #details .location {
         font-family: 'Lora', serif;
